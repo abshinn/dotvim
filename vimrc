@@ -20,6 +20,9 @@ Bundle 'davidhalter/jedi-vim'
 " Simple status bar
 Bundle 'itchyny/lightline.vim'
 
+" Github flavored markdown
+Bundle 'jtratner/vim-flavored-markdown'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
