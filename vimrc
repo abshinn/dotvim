@@ -17,10 +17,12 @@ Bundle 'ervandew/supertab'
 " Python autocomplete
 Bundle 'davidhalter/jedi-vim'
 
+" Simple status bar
+Bundle 'itchyny/lightline.vim'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
+
 
 " Custom Plugin and Vim Settings
 
@@ -41,22 +43,13 @@ set expandtab
 " ignore files in autocomplete
 set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif
 
-" Highlight excess line length
-augroup vimrc_autocmds
-    autocmd!
-    " highlight characters past column 120
-    autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
-    autocmd FileType python match Excess /\%120v.*/
-    autocmd FileType python set nowrap
-    augroup END
-
-" search settings
+" Search settings
 set incsearch           " Incremental search
 set hlsearch            " Highlight search match
 set ignorecase          " Do case insensitive matching
 set smartcase           " do not ignore if search pattern has CAPS
 
-" comment and uncomment with ,c and ,u
+" Comment and uncomment with ,c and ,u
 autocmd FileType c,cpp,java,scala,html let b:comment_leader = '// '
 autocmd FileType sh,ruby,python,yml,R  let b:comment_leader = '# '
 autocmd FileType conf,fstab            let b:comment_leader = '# '
@@ -66,7 +59,7 @@ autocmd FileType vim                   let b:comment_leader = '" '
 noremap <silent> ,c :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
 noremap <silent> ,u :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 
-" insert blank lines above and below with ctrl-j and ctrl-k
+" Insert blank lines above and below with ctrl-j and ctrl-k
 nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
 nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 
@@ -75,3 +68,25 @@ nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#popup_on_dot = 0
 let g:SuperTabDefaultCompletionType = 'context'
+
+" Lightline settings
+set laststatus=2
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"read-only":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '|', 'right': '' }
+      \ }
