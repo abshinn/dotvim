@@ -5,11 +5,11 @@ This is my vim configuration! Nothing too special. I use a few Vundle bundles, a
 
 ### Current Vundle Plugins
 
-- tpope/vim-fugitive (Github commands in vim with :G{command})
-- ervandew/supertab - Smart tab completion
-- davidhalter/jedi-vim - Python auto-complete and syntax
-- itchyny/lightline.vim - Simple status bar
-- jtratner/vim-flavored-markdown - Github-flavored markdown syntax highlighting
+- [tpope/vim-fugitive](http://github.com/tpope/vim-fugitive) - Github commands in vim with :G{command}
+- [ervandew/supertab](http://github.com/ervandew/supertab) - Smart tab completion
+- [davidhalter/jedi-vim](http://github.com/davidhalter/jedi-vim) - Python auto-complete and syntax
+- [itchyny/lightline.vim](http://github.com/itchyny/lightline.vim) - Simple status bar
+- [jtratner/vim-flavored-markdown](http://github.com/jtratner/vim-flavored-markdown) - Github-flavored markdown syntax highlighting
 
 ### Vundle Install
 
