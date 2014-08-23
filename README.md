@@ -3,7 +3,7 @@ abshinn/dotvim
 
 This is my vim configuration! Nothing too special. I use a few Vundle bundles, and a handful of other custom settings I have found to be useful.
 
-## Current Vundle Plugins
+### Current Vundle Plugins
 
 - tpope/vim-fugitive (Github commands in vim with :G{command})
 - ervandew/supertab - Smart tab completion
@@ -11,15 +11,15 @@ This is my vim configuration! Nothing too special. I use a few Vundle bundles, a
 - itchyny/lightline.vim - Simple status bar
 - jtratner/vim-flavored-markdown - Github-flavored markdown syntax highlighting
 
-## Vundle Install
+### Vundle Install
 
 Vundle is a simple plugin manager for vim that is easy to set up. See [gmarik/Vundle](https://github.com/gmarik/Vundle.vim) for install instructions. Or, you can just clone this repository.
 
-## Cloning this Repo
+### Cloning this Repo
 
 Be sure to keep your own files as backup, then name this repository `.vim` in your home directory, and set up the symbolic link as discussed below.
 
-## Link to vimrc
+### Link to vimrc
 
 Importantly, I create `.vimrc` as a symbolic link in my home directory, pointing to `vimrc` in this repository.
 
