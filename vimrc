@@ -5,6 +5,7 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+
 " let Vundle manage Vundle, required
 Bundle 'gmarik/Vundle.vim'
 
@@ -23,12 +24,12 @@ Bundle 'itchyny/lightline.vim'
 " Github flavored markdown
 Bundle 'jtratner/vim-flavored-markdown'
 
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 
 " Custom Plugin and Vim Settings
-
 syntax on
 colorscheme elflord
 
@@ -71,6 +72,12 @@ nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#popup_on_dot = 0
 let g:SuperTabDefaultCompletionType = 'context'
+
+" Set github-flavored markdown as default
+augroup markdown
+    au!
+    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+augroup END
 
 " Lightline settings
 set laststatus=2
