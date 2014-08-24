@@ -13,7 +13,13 @@ This is my vim configuration! Nothing too special. I use a few Vundle bundles, a
 
 ### Vundle Install
 
-Vundle is a simple plugin manager for vim that is easy to set up. See [gmarik/Vundle](https://github.com/gmarik/Vundle.vim) for install instructions. Or, you can just clone this repository.
+Vundle is a simple plugin manager created by [gmarik](http://github.com/gmarik) for vim that is easy to set up. Vundle itself is version controlled with Github. For installation, all you have to do is clone the repository. 
+
+```bash
+$ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+
+See [gmarik/Vundle](https://github.com/gmarik/Vundle.vim) for more information.
 
 ### Cloning this Repo
 
