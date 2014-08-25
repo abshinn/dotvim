@@ -55,7 +55,7 @@ set smartcase           " do not ignore if search pattern has CAPS
 
 " Comment and uncomment with ,c and ,u
 autocmd FileType c,cpp,java,scala,html let b:comment_leader = '// '
-autocmd FileType sh,ruby,python,yml,R  let b:comment_leader = '# '
+autocmd FileType sh,ruby,python,yml,r  let b:comment_leader = '# '
 autocmd FileType conf,fstab            let b:comment_leader = '# '
 autocmd FileType tex                   let b:comment_leader = '% '
 autocmd FileType mail                  let b:comment_leader = '> '
