@@ -53,6 +53,12 @@ set hlsearch            " Highlight search match
 set ignorecase          " Do case insensitive matching
 set smartcase           " do not ignore if search pattern has CAPS
 
+" Cut and paste from system clipboard with F1 and F2
+nmap <F1> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+imap <F1> <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+nmap <F2> :.w !pbcopy<CR><CR>
+vmap <F2> :w !pbcopy<CR><CR>
+
 " Comment and uncomment with ,c and ,u
 autocmd FileType c,cpp,java,scala,html let b:comment_leader = '// '
 autocmd FileType sh,ruby,python,yml,r  let b:comment_leader = '# '
